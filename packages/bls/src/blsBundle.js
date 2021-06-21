@@ -369,6 +369,7 @@ function rlpMessage(arguments){
 
 const signMsg = async (messageRLP, secretBytes) =>  {
     try {
+        await bls_.ensureReady();
         let hashedMessage = keccak('keccak256').update(messageRLP).digest();
         let pub = privateToPublic(secretBytes);
         hashedMessage = hashComplete(pub, hashedMessage);
