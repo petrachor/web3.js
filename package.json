@@ -16,7 +16,7 @@
     ],
     "scripts": {
         "version": "npm run build",
-        "postinstall": "npm run bootstrap",
+        "postinstall": "npm run bootstrap && cd web8.js && npm run build",
         "build": "npm run bootstrap && lerna run compile && webpack && cp -r ./dist ./packages/web3",
         "publish": "lerna publish",
         "bootstrap": "lerna bootstrap --hoist",
