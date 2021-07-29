@@ -36,6 +36,7 @@ var Personal = require('web3-eth-personal');
 var Shh = require('web3-shh');
 var Bzz = require('web3-bzz');
 var utils = require('web3-utils');
+var Bls = require('../../bls/src/blsBundle');
 
 var Web3 = function Web3() {
     var _this = this;
@@ -49,6 +50,7 @@ var Web3 = function Web3() {
     this.eth = new Eth(this);
     this.shh = new Shh(this);
     this.bzz = new Bzz(this);
+    this.bls = Bls;
 
     // overwrite package setProvider
     var setProvider = this.setProvider;
@@ -71,7 +73,8 @@ Web3.modules = {
     Net: Net,
     Personal: Personal,
     Shh: Shh,
-    Bzz: Bzz
+    Bzz: Bzz,
+    Bls: Bls,
 };
 
 core.addProviders(Web3);
