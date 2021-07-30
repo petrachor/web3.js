@@ -1,6 +1,6 @@
 {
     "name": "@petrachor/web3.js",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "description": "Ethereum JavaScript API wrapper repository",
     "license": "LGPL-3.0",
     "engines": {
@@ -16,7 +16,7 @@
     ],
     "scripts": {
         "version": "npm run build",
-        "postinstall": "npm run bootstrap && npm run build",
+        "postinstall": "npm install lerna && npm run build",
         "build": "npm run bootstrap && lerna run compile && webpack",
         "publish": "lerna publish",
         "bootstrap": "lerna bootstrap --hoist",
