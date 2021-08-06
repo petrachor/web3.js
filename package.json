@@ -1,6 +1,6 @@
 {
-    "name": "web3.js",
-    "private": true,
+    "name": "@petrachor/web3.js",
+    "version": "1.0.3",
     "description": "Ethereum JavaScript API wrapper repository",
     "license": "LGPL-3.0",
     "engines": {
@@ -16,8 +16,8 @@
     ],
     "scripts": {
         "version": "npm run build",
-        "postinstall": "npm run bootstrap",
-        "build": "npm run bootstrap && lerna run compile && webpack && cp -r ./dist ./packages/web3",
+        "postinstall": "npm install lerna && npm run build",
+        "build": "npm run bootstrap && lerna run compile && webpack",
         "publish": "lerna publish",
         "bootstrap": "lerna bootstrap --hoist",
         "lint": "jshint *.js packages",
@@ -136,5 +136,8 @@
         "wait-port": "^0.2.9",
         "webpack": "^4.44.2",
         "webpack-cli": "^3.3.12"
+    },
+    "dependencies": {
+        "node-fetch": "^2.6.1"
     }
 }
